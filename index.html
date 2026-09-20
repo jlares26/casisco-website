@@ -162,6 +162,10 @@ input,textarea{caret-color:var(--accent);}
 .hero-lede{margin-top:20px;max-width:52ch;color:#a8b1ba;font-size:clamp(16px,1.6vw,19px);line-height:1.55;}
 .hero-lede strong{color:var(--ink);font-weight:600;}
 .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:32px;}
+@media (max-width:620px){
+  .hero{min-height:0;}
+  .hero-inner{padding-top:clamp(20px,6vw,32px);padding-bottom:40px;}
+}
 
 /* ---------- sections ---------- */
 .sec{padding-block:clamp(68px,8vw,120px);scroll-margin-top:calc(var(--head-h) + 8px);}
