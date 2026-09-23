@@ -262,6 +262,9 @@ input,textarea{caret-color:var(--accent);}
 .tile-sm{aspect-ratio:5/4;}
 .tile-wide{aspect-ratio:3/2;}
 .tile-full{aspect-ratio:21/9;}
+@media (max-width:620px){
+  .tile-full{aspect-ratio:5/4;}
+}
 .tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:clamp(20px,2.7vw,36px);}
 .tile h3{font-size:clamp(20px,2.2vw,28px);letter-spacing:-0.02em;font-weight:700;line-height:1.1;}
 .tile-lead h3{font-family:var(--display);font-size:clamp(25px,3vw,40px);letter-spacing:-0.035em;}
