@@ -374,14 +374,14 @@ input,textarea{caret-color:var(--accent);}
 @media (hover:hover) and (pointer:fine){
   .ccard-copy{
     display:inline-flex;align-items:center;gap:5px;position:absolute;top:14px;right:14px;z-index:2;
-    background:rgba(255,255,255,0.08);border:1px solid var(--hair-2);border-radius:999px;
-    color:var(--muted);font-family:var(--sans);font-size:12.5px;font-weight:500;
+    background:rgba(10,10,12,0.12);border:1px solid rgba(10,10,12,0.2);border-radius:999px;
+    color:rgba(10,10,12,0.75);font-family:var(--sans);font-size:12.5px;font-weight:500;
     padding:6px 12px;cursor:pointer;opacity:0;transform:translateY(-2px);
     transition:opacity .18s ease,transform .18s ease,background-color .18s ease,color .18s ease,border-color .18s ease;
   }
   .ccard-phone-wrap:hover .ccard-copy,.ccard-copy:focus-visible{opacity:1;transform:translateY(0);}
-  .ccard-copy:hover,.ccard-copy:focus-visible{background:var(--accent);color:var(--on-accent);border-color:var(--accent);}
-  .ccard-copy.is-copied{background:var(--accent);color:var(--on-accent);border-color:var(--accent);opacity:1;transform:translateY(0);}
+  .ccard-copy:hover,.ccard-copy:focus-visible{background:var(--on-accent);color:var(--accent);border-color:var(--on-accent);}
+  .ccard-copy.is-copied{background:var(--on-accent);color:var(--accent);border-color:var(--on-accent);opacity:1;transform:translateY(0);}
 }
 @media (hover:hover) and (pointer:fine){
   .ccard:hover{border-color:rgba(255,106,31,0.4);transform:translateY(-3px);}
@@ -391,6 +391,18 @@ input,textarea{caret-color:var(--accent);}
 }
 @media (max-width:720px){
   .contact-cards{grid-template-columns:1fr;}
+}
+
+/* featured (light) contact card, used for the primary call-to-action */
+.ccard.ccard-featured{background:#f3ede4;border-color:rgba(20,16,12,0.1);color:#171310;}
+.ccard.ccard-featured::after{display:none;}
+.ccard.ccard-featured .ccard-ic{background:rgba(255,106,31,0.14);color:var(--accent);}
+.ccard.ccard-featured .ccard-label{color:rgba(23,19,16,0.55);}
+.ccard.ccard-featured .ccard-value{color:#171310;}
+.ccard.ccard-featured .ccard-value .chev{color:var(--accent);}
+@media (hover:hover) and (pointer:fine){
+  .ccard.ccard-featured:hover{border-color:rgba(255,106,31,0.35);}
+  .ccard.ccard-featured:hover .ccard-ic{background:var(--accent);color:var(--on-accent);}
 }
 
 /* ---------- footer ---------- */
@@ -679,7 +691,7 @@ a.foot-ig:hover svg{color:var(--accent);}
     </div>
     <div class="contact-cards rv">
       <div class="ccard-phone-wrap">
-        <a class="ccard" href="tel:+13464593587">
+        <a class="ccard ccard-featured" href="tel:+13464593587">
           <span class="ccard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.5c0-.55.45-1 1-1h2.7c.47 0 .87.32.97.78l1.1 4.9a1 1 0 0 1-.29.95l-1.7 1.65a13.4 13.4 0 0 0 6 6l1.65-1.7a1 1 0 0 1 .95-.29l4.9 1.1c.46.1.78.5.78.97V21c0 .55-.45 1-1 1h-1.5C9.4 22 2 14.6 2 5.5V4.5Z"/></svg></span>
           <span class="ccard-body">
             <span class="ccard-label">Call dispatch</span>
