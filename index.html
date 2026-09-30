@@ -342,30 +342,25 @@ input,textarea{caret-color:var(--accent);}
   position:relative;overflow:hidden;isolation:isolate;
   display:flex;flex-direction:column;gap:clamp(22px,3vw,30px);
   padding:clamp(26px,3vw,34px) clamp(22px,2.6vw,28px);
-  background:var(--raise);border:1px solid var(--hair-2);border-radius:var(--r-xl);
-  text-decoration:none;color:var(--ink);
-  transition:border-color .22s var(--ease),transform .22s var(--ease),background-color .22s var(--ease);
-}
-.ccard::after{
-  content:"";position:absolute;inset:0;z-index:-1;opacity:0;border-radius:inherit;
-  background:radial-gradient(120% 140% at 15% 0%,rgba(255,106,31,0.16),transparent 60%);
-  transition:opacity .25s ease;
+  background:#2b241d;border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-xl);
+  text-decoration:none;color:#f3ede4;
+  transition:border-color .22s var(--ease),transform .22s var(--ease),box-shadow .22s var(--ease);
 }
 .ccard-ic{
   display:inline-flex;align-items:center;justify-content:center;
   width:52px;height:52px;border-radius:50%;
-  background:rgba(255,106,31,0.13);color:var(--accent);flex:0 0 auto;
-  transition:background-color .22s ease,transform .22s var(--ease);
+  background:rgba(255,106,31,0.16);color:var(--accent);flex:0 0 auto;
+  transition:background-color .22s ease,color .22s ease,transform .22s var(--ease);
 }
-.ccard-ic svg{width:24px;height:24px;}
+.ccard-ic svg{width:22px;height:22px;}
 .ccard-body{margin-top:auto;}
 .ccard-label{
-  display:block;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--dim);
+  display:block;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:#a89a87;
 }
 .ccard-value{
   display:flex;flex-wrap:wrap;align-items:center;gap:6px 7px;margin-top:7px;
   font-family:var(--display);font-size:clamp(16.5px,1.5vw,19px);font-weight:700;letter-spacing:-0.02em;
-  overflow-wrap:anywhere;
+  overflow-wrap:anywhere;color:#f3ede4;
 }
 .ccard-value .chev{color:var(--accent);flex:0 0 auto;transition:transform .22s var(--ease);}
 .ccard-phone-wrap{position:relative;height:100%;}
@@ -374,35 +369,22 @@ input,textarea{caret-color:var(--accent);}
 @media (hover:hover) and (pointer:fine){
   .ccard-copy{
     display:inline-flex;align-items:center;gap:5px;position:absolute;top:14px;right:14px;z-index:2;
-    background:rgba(10,10,12,0.12);border:1px solid rgba(10,10,12,0.2);border-radius:999px;
-    color:rgba(10,10,12,0.75);font-family:var(--sans);font-size:12.5px;font-weight:500;
+    background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:999px;
+    color:#c3b39d;font-family:var(--sans);font-size:12.5px;font-weight:500;
     padding:6px 12px;cursor:pointer;opacity:0;transform:translateY(-2px);
     transition:opacity .18s ease,transform .18s ease,background-color .18s ease,color .18s ease,border-color .18s ease;
   }
   .ccard-phone-wrap:hover .ccard-copy,.ccard-copy:focus-visible{opacity:1;transform:translateY(0);}
-  .ccard-copy:hover,.ccard-copy:focus-visible{background:var(--on-accent);color:var(--accent);border-color:var(--on-accent);}
-  .ccard-copy.is-copied{background:var(--on-accent);color:var(--accent);border-color:var(--on-accent);opacity:1;transform:translateY(0);}
+  .ccard-copy:hover,.ccard-copy:focus-visible{background:var(--accent);color:var(--on-accent);border-color:var(--accent);}
+  .ccard-copy.is-copied{background:var(--accent);color:var(--on-accent);border-color:var(--accent);opacity:1;transform:translateY(0);}
 }
 @media (hover:hover) and (pointer:fine){
-  .ccard:hover{border-color:rgba(255,106,31,0.4);transform:translateY(-3px);}
-  .ccard:hover::after{opacity:1;}
+  .ccard:hover{border-color:rgba(255,106,31,0.4);transform:translateY(-3px);box-shadow:0 14px 28px rgba(0,0,0,0.35);}
   .ccard:hover .ccard-ic{background:var(--accent);color:var(--on-accent);transform:scale(1.06);}
   .ccard:hover .ccard-value .chev{transform:translate(3px,-3px);}
 }
 @media (max-width:720px){
   .contact-cards{grid-template-columns:1fr;}
-}
-
-/* featured (light) contact card, used for the primary call-to-action */
-.ccard.ccard-featured{background:#f3ede4;border-color:rgba(20,16,12,0.1);color:#171310;}
-.ccard.ccard-featured::after{display:none;}
-.ccard.ccard-featured .ccard-ic{background:rgba(255,106,31,0.14);color:var(--accent);}
-.ccard.ccard-featured .ccard-label{color:rgba(23,19,16,0.55);}
-.ccard.ccard-featured .ccard-value{color:#171310;}
-.ccard.ccard-featured .ccard-value .chev{color:var(--accent);}
-@media (hover:hover) and (pointer:fine){
-  .ccard.ccard-featured:hover{border-color:rgba(255,106,31,0.35);}
-  .ccard.ccard-featured:hover .ccard-ic{background:var(--accent);color:var(--on-accent);}
 }
 
 /* ---------- footer ---------- */
@@ -691,7 +673,7 @@ a.foot-ig:hover svg{color:var(--accent);}
     </div>
     <div class="contact-cards rv">
       <div class="ccard-phone-wrap">
-        <a class="ccard ccard-featured" href="tel:+13464593587">
+        <a class="ccard" href="tel:+13464593587">
           <span class="ccard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.5c0-.55.45-1 1-1h2.7c.47 0 .87.32.97.78l1.1 4.9a1 1 0 0 1-.29.95l-1.7 1.65a13.4 13.4 0 0 0 6 6l1.65-1.7a1 1 0 0 1 .95-.29l4.9 1.1c.46.1.78.5.78.97V21c0 .55-.45 1-1 1h-1.5C9.4 22 2 14.6 2 5.5V4.5Z"/></svg></span>
           <span class="ccard-body">
             <span class="ccard-label">Call us</span>
